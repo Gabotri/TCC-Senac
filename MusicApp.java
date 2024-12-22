@@ -11,14 +11,14 @@ import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-//classe da criação de login
-public class MusicAppLogin extends Application {
+// Classe de inicialização do Stage
+public class MusicApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         Scene loginScene = createLoginScene(primaryStage);
         primaryStage.setScene(loginScene);
 
-        // Configurações do Stage
+        // Configurações do Stage (Scene)
         primaryStage.setTitle("MusicApp");
         primaryStage.getIcons().add(new Image("file:icon.png"));
         primaryStage.setMinWidth(400);
@@ -61,6 +61,11 @@ public class MusicAppLogin extends Application {
         primaryStage.show();
     }
 
+    // Fim de configurações do Stage (Scene)
+
+
+
+    // Classe do Login (Secene)
     private Scene createLoginScene(Stage primaryStage) {
         // Título do app
         Label appTitle = new Label("Music Center");
@@ -184,104 +189,9 @@ public class MusicAppLogin extends Application {
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         return scene;
     }
+    // Fim do Login (Scene)
 
-    private Scene createHomeScene(Stage primaryStage) {
-        // Layout principal
-        BorderPane root = new BorderPane();
-
-        // Barra lateral (Histórico)
-        VBox sidebar = new VBox(10);
-        sidebar.getStyleClass().add("sidebar");
-
-        Label historyTitle = new Label("Histórico");
-        historyTitle.getStyleClass().add("sidebar-title");
-
-        VBox historyList = new VBox(5);
-        historyList.getStyleClass().add("history-list");  // Adiciona a classe para o CSS
-
-        for (int i = 1; i <= 8; i++) {
-            Button musicButton = new Button("Música " + i + "\nArtista");
-            musicButton.getStyleClass().add("sidebar-music-button");
-            historyList.getChildren().add(musicButton);
-        }
-
-        Button settingsButton = new Button("Configuração");
-        Button exitButton = new Button("Sair");
-        settingsButton.getStyleClass().add("sidebar-footer-button");
-        exitButton.getStyleClass().add("sidebar-footer-button");
-
-        sidebar.getChildren().addAll(historyTitle, historyList, settingsButton, exitButton);
-
-        // Barra superior
-        HBox topBar = new HBox(15);
-        topBar.getStyleClass().add("top-bar");
-
-        Button premiumButton = new Button("Premium");
-        premiumButton.getStyleClass().add("sidebar-button");
-
-        TextField searchField = new TextField();
-        searchField.setPromptText("Pesquisar...");
-        searchField.getStyleClass().add("search-field");
-
-        Button searchButton = new Button();
-        searchButton.getStyleClass().add("search-button");
-
-        Label curtirButton = new Label("Curtidas");
-        curtirButton.getStyleClass().add("top-bar-text");
-
-        Label bar = new Label("|");
-        curtirButton.getStyleClass().add("top-bar-text");
-
-        Label bibliotecaButton = new Label("Biblioteca");
-        bibliotecaButton.getStyleClass().add("top-bar-text");
-
-        Button userButton = new Button();
-        userButton.getStyleClass().add("user-button");
-
-        topBar.getChildren().addAll( premiumButton, searchField, searchButton, curtirButton, bar, bibliotecaButton, userButton);
-
-        // Conteúdo central
-        VBox contentArea = new VBox(15);
-        contentArea.getStyleClass().add("content-area");
-
-        Label chooseArtist = new Label("Escolha seu artista");
-        chooseArtist.getStyleClass().add("content-title");
-
-        HBox artistRow = new HBox(15);
-        artistRow.getStyleClass().add("artist-row");
-        for (int i = 0; i < 7; i++) {
-            Button artistButton = new Button();
-            artistButton.getStyleClass().add("artist-button");
-            artistRow.getChildren().add(artistButton);
-        }
-
-        contentArea.getChildren().addAll(chooseArtist, artistRow);
-
-        // Player inferior
-        HBox musicPlayer = new HBox(10);
-        musicPlayer.getStyleClass().add("music-player");
-
-        String[] icons = {"⟳", "⏮", "▶", "⏭", "❤", "⇅"};
-        for (String icon : icons) {
-            Button playerButton = new Button(icon);
-            playerButton.getStyleClass().add("player-button");
-            musicPlayer.getChildren().add(playerButton);
-        }
-
-        root.setLeft(sidebar);
-        root.setTop(topBar);
-        root.setCenter(contentArea);
-        root.setBottom(musicPlayer);
-
-        Scene scene = new Scene(root, 1000, 600);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        return scene;
-    }
-
-
-
-
-
+    // Classe do Cadastro (Scene)
     private Scene createAccountScene(Stage primaryStage) {
         // Título do app
         Label createAccountTitle = new Label("Criar Conta");
@@ -348,6 +258,170 @@ public class MusicAppLogin extends Application {
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         return scene;
     }
+    // Fim do Cadastro (Scene)
+
+
+
+    // Classe do Home (Scene)
+    private Scene createHomeScene(Stage primaryStage) {
+        // Layout principal
+        BorderPane root = new BorderPane();
+
+        // Barra lateral (Histórico)
+        VBox sidebar = new VBox(10); // Uma caixa manipulável estilo div
+        sidebar.setAlignment(Pos.TOP_LEFT);
+        sidebar.getStyleClass().add("sidebar"); // estilo da barra lateral
+
+        Label historyTitle = new Label("Histórico"); // novo título chamado histórico
+        historyTitle.getStyleClass().add("sidebar-title"); // estilo da barra de título
+
+        VBox historyList = new VBox(5);
+        historyList.getStyleClass().add("history-list");  // Adiciona a classe para o CSS
+
+        for (int i = 1; i <= 8; i++) {
+            // Criar botão com a imagem do artista
+            Button artistButton = new Button();
+            artistButton.setGraphic(new ImageView(new Image("file:artista.png")));
+            artistButton.getStyleClass().add("sidebar-artist-button");
+
+            // Definir estilo e tamanho da imagem no botão
+            ImageView imageView = (ImageView) artistButton.getGraphic();
+            imageView.setFitWidth(40); // Largura da imagem
+            imageView.setFitHeight(40); // Altura da imagem
+
+            // Definir ação ao clicar no botão (exemplo de saída no console)
+            int finalI = i;
+            artistButton.setOnAction(e -> System.out.println("Você clicou na Música " + finalI));
+
+            // Adicionar botão estilizado à lista de histórico
+            historyList.getChildren().add(artistButton);
+
+            // Criar texto do botão
+            Label musicLabel = new Label("Música " + i + "\nArtista");
+            musicLabel.getStyleClass().add("sidebar-music-label");
+
+            // Combinar imagem e texto no botão usando HBox
+            HBox artistButtonContent = new HBox(10, artistButton, musicLabel);
+            artistButtonContent.setAlignment(Pos.CENTER_LEFT);
+
+            // Criar o botão estilizado
+            Button musicButton = new Button();
+            musicButton.getStyleClass().add("sidebar-artist-button");
+            musicButton.setGraphic(artistButtonContent); // Define o conteúdo do botão
+
+            // Adicionar o botão à lista de histórico
+            historyList.getChildren().add(musicButton);
+        }
+
+        Button settingsButton = new Button("Configuração");
+        Button exitButton = new Button("Sair");
+        settingsButton.getStyleClass().add("sidebar-footer-button");
+        exitButton.getStyleClass().add("sidebar-footer-button");
+
+        // Botões agora são parte da sidebar
+        Button premiumButton = new Button("Premium");
+        premiumButton.getStyleClass().add("sidebar-button"); // Mover premium para a sidebar
+        sidebar.getChildren().addAll(premiumButton, historyTitle, historyList, settingsButton, exitButton);
+
+        // Conteúdo central
+        VBox contentArea = new VBox(15);
+        contentArea.getStyleClass().add("content-area");
+
+        Label chooseArtist = new Label("Escolha seu artista");
+        chooseArtist.getStyleClass().add("content-title");
+
+        // Alinhar os botões Curtidas, Biblioteca e Pesquisar em uma linha (HBox)
+        HBox topRow = new HBox(15);
+        topRow.getStyleClass().add("top-row");
+
+        // Adicionando o campo de busca (searchField) como primeiro item
+        TextField searchField = new TextField();
+        searchField.setPromptText("Pesquisar...");
+        searchField.getStyleClass().add("search-field");
+
+        // Botões para Curtidas, Biblioteca e Pesquisar
+        Button searchButton = new Button();
+        searchButton.getStyleClass().add("search-button");
+
+        // Caminho da imagem
+        ImageView searchIcon = new ImageView(new Image(getClass().getResource("/images/icons/search.png").toExternalForm()));
+        searchIcon.setFitWidth(40);  // Definir largura do ícone
+        searchIcon.setFitHeight(40);  // Definir altura do ícone
+
+        searchButton.setGraphic(searchIcon);  // Define o ícone no botão
+
+
+        Button curtirButton = new Button("Curtidas");
+        Label bar = new Label("|"); // novo título chamado histórico
+        bar.getStyleClass().add("top_bar_text"); // estilo da barra de título
+        Button bibliotecaButton = new Button("Biblioteca");
+        curtirButton.getStyleClass().add("user-name");
+
+        bibliotecaButton.getStyleClass().add("user-name");
+
+        // Adicionar a informação do perfil à direita da barra
+        HBox topBarWithProfile = new HBox(15);
+        topBarWithProfile.setAlignment(Pos.CENTER_RIGHT);  // Alinhar à direita
+        topBarWithProfile.getStyleClass().add("top-bar-profile");  // Adiciona a classe CSS para o padding
+        Button userButton = new Button();
+        userButton.getStyleClass().add("user-button");
+
+        ImageView UserIcon = new ImageView(new Image(getClass().getResource("/images/icons/User.png").toExternalForm()));
+        UserIcon.setFitWidth(50);  // Definir largura do ícone
+        UserIcon.setFitHeight(50);  // Definir altura do ícone
+
+        userButton.setGraphic(UserIcon);  // Define o ícone no botão
+
+        Button userName = new Button("Usuário");
+        userName.getStyleClass().add("user-name");
+        topBarWithProfile.getChildren().addAll(curtirButton, bar, bibliotecaButton, userButton, userName);
+
+        // Adicionar todos os elementos ao topRow
+        topRow.getChildren().addAll(searchField, searchButton);
+
+        // Colocar a barra de perfil à direita
+        topRow.getChildren().add(topBarWithProfile);
+
+        HBox artistRow = new HBox(15);
+        artistRow.getStyleClass().add("artist-row");
+        for (int i = 0; i < 7; i++) {
+            Button artistButton = new Button();
+            artistButton.getStyleClass().add("artist-button");
+            artistRow.getChildren().add(artistButton);
+        }
+
+        contentArea.getChildren().addAll(topRow, chooseArtist, artistRow);
+
+        // Player inferior
+        HBox musicPlayer = new HBox(10);
+        musicPlayer.getStyleClass().add("music-player");
+
+        String[] icons = {"⟳", "⏮", "▶", "⏭", "❤", "⇅"};
+        for (String icon : icons) {
+            Button playerButton = new Button(icon);
+            playerButton.getStyleClass().add("player-button");
+            musicPlayer.getChildren().add(playerButton);
+        }
+
+        // Configurando os elementos na tela
+        root.setLeft(sidebar);  // Colocando a sidebar na esquerda
+        root.setCenter(contentArea); // Conteúdo central
+        root.setBottom(musicPlayer);  // Player inferior
+
+        Scene scene = new Scene(root, 1000, 600);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        return scene;
+    }
+
+
+
+
+
+
+
+
+
+
 
     // Função para mostrar alertas
     private void showAlert(String title, String message, Alert.AlertType alertType) {
@@ -357,8 +431,11 @@ public class MusicAppLogin extends Application {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    // Fim Da função para mostrar alertas
 
+    // Main para inicialização do programa
     public static void main(String[] args) {
         launch(args);
     }
+    // Fim da main
 }
