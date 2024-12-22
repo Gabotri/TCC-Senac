@@ -1,0 +1,490 @@
+/* Fundo principal */
+.root-background {
+    -fx-background-color: linear-gradient(to bottom, #2a0e3d, #1a0e1d);
+    -fx-font-family: Arial, sans-serif; /* Definir uma fonte limpa e moderna */
+    -fx-font-size: 14px; /* Tamanho padrão da fonte */
+}
+/* Fim do fundo principal */
+
+/* CADASTRO */
+
+
+/* Título do app */
+.app-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #9B4DFF, #6A2DFF);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+}
+
+/* Campo de texto */
+.text-field_login {
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+    -fx-font-size: 14px;
+    -fx-padding: 10px; /* Garantir que o padding seja o mesmo */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color: linear-gradient(to right, #3b2e46, #2c1d31);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 4, 0, 2, 2);
+    -fx-max-width: 280px;
+    -fx-min-width: 200px;
+    -fx-pref-width: 280px;
+    -fx-pref-height: 40px; /* Definir uma altura fixa, caso necessário */
+    -fx-transition: all 0.3s ease;
+}
+
+/* Estilo do ToggleButton */
+.toggle-button {
+    -fx-background-color: #5A2A6D; /* Roxo escuro */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 15px; /* Certifique-se de que o padding seja o mesmo do TextField */
+    -fx-border-radius: 0px 5px 5px 0px;
+    -fx-background-radius: 0px 5px 5px 0px;
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.3s, transform 0.3s;
+    -fx-effect: dropshadow(gaussian, #000000, 0, 0.5, 0, 0.5); /* Adiciona sombra */
+    -fx-pref-height: 40px; /* Alinha a altura do botão com o TextField */
+}
+
+/* Efeito de hover no ToggleButton */
+.toggle-button:hover {
+    -fx-background-color: #6A3E8D; /* Roxo mais suave */
+    -fx-opacity: 0.9; /* Diminui a opacidade */
+}
+
+/* Efeito pressionado no ToggleButton */
+.toggle-button:pressed {
+    -fx-background-color: #7F4A97; /* Roxo mais escuro */
+}
+
+/* Efeito de foco no ToggleButton */
+.toggle-button:focused {
+    -fx-border-color: #FF1493; /* Cor da borda no foco */
+    -fx-text-fill: #FF1493; /* Cor do texto no foco */
+}
+
+/* Estilo para ToggleButton ativado (selecionado) */
+.toggle-button:selected {
+    -fx-background-color: linear-gradient(to right, #6A3E8D, #7F4A97); /* Gradiente */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para ToggleButton desativado (não selecionado) */
+.toggle-button:not(:selected) {
+    -fx-background-color: #4B2A57; /* Cor de fundo quando desativado */
+    -fx-text-fill: white;
+}
+
+/* Animação de transição suave */
+.toggle-button:selected, .toggle-button:not(:selected) {
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.text-field-container {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-alignment: center-left;
+    -fx-max-width: 280px;
+    -fx-min-width: 200px;
+    -fx-pref-width: 280px;
+}
+
+
+/* Botão de menu */
+.login-button {
+    -fx-background-color: linear-gradient(to right, #5B2D72, #6A3E8D); /* Roxo escuro com gradiente para um roxo mais suave */
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 20; /* Ajuste no padding para mais espaço ao redor do texto */
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 2, 2);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+
+    -fx-max-width: 280px;
+    -fx-min-width: 200px;
+    -fx-pref-width: 280px;
+    -fx-max-height: 40px;
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+
+    -fx-alignment: center;
+}
+
+
+/* Efeito hover - quando o usuário passa o mouse sobre o botão */
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #6A3E8D, #7F4A97); /* Roxo mais suave e vibrante */
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 4, 4);
+    -fx-transform: scale(1.05);
+}
+
+/* Efeito pressionado - quando o botão é pressionado */
+.login-button:pressed {
+    -fx-background-color: #7F4A97;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 5, 0, 2, 2);
+    -fx-transform: scale(1.02);
+}
+
+.separator-label {
+    -fx-text-fill: #B0BEC5;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-padding: 15px 0;
+    -fx-text-alignment: center;
+}
+
+/* Separador */
+.separator {
+    -fx-border-color: #B0BEC5;
+    -fx-border-width: 0 0 0 0;
+    -fx-border-style: solid;
+    -fx-padding: 15px 0;
+    -fx-background-color: transparent;
+}
+
+/* Botão Google */
+.google-button {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 18;
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+    -fx-border-color: gray;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.3s, color 0.3s;
+}
+
+.google-button:hover {
+    -fx-background-color: #f1f1f1;
+    -fx-text-fill: #4285F4;
+}
+
+.google-button:pressed {
+    -fx-background-color: #4285F4;
+    -fx-text-fill: white;
+}
+
+.google-button .status-circle {
+    -fx-background-color: red;
+    -fx-shape: "M 0,0 L 10,0 L 10,10 L 0,10 Z";
+    -fx-border-radius: 50%;
+    -fx-width: 10px;
+    -fx-height: 10px;
+    -fx-align-self: center;
+    -fx-margin-right: 10px;
+}
+
+.google-button.success .status-circle {
+    -fx-background-color: green;
+}
+
+/* Botão Esqueci a Senha como link com estilo roxo */
+.forgot-password-button {
+    -fx-background-color: transparent; /* Fundo transparente */
+    -fx-text-fill: #7F4A97; /* Cor do texto roxa */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 0; /* Sem padding, fica igual a um link */
+    -fx-border: none; /* Remover borda */
+    -fx-cursor: hand;
+    -fx-transition: color 0.3s, font-size 0.3s;
+    -fx-underline: false; /* Deixa o texto sublinhado */
+}
+
+/* Efeito hover no link Esqueci a Senha */
+.forgot-password-button:hover {
+    -fx-text-fill: #9B4DFF; /* Cor ao passar o mouse (roxo mais vibrante) */
+    -fx-font-size: 18px; /* Aumenta o tamanho do texto no hover */
+}
+
+/* Efeito pressionado no link Esqueci a Senha */
+.forgot-password-button:pressed {
+    -fx-text-fill: #6A2DFF; /* Cor ao pressionar (roxo mais forte) */
+}
+
+
+/* Botão Criar Conta como link com estilo roxo */
+.create-account-button {
+    -fx-background-color: transparent; /* Fundo transparente */
+    -fx-text-fill: #7F4A97; /* Cor do texto roxa */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 0; /* Sem padding, fica igual a um link */
+    -fx-border: none; /* Remover borda */
+    -fx-cursor: hand;
+    -fx-transition: color 0.3s, font-size 0.3s;
+    -fx-underline: false; /* Deixa o texto sublinhado */
+}
+
+/* Efeito hover no link Criar Conta */
+.create-account-button:hover {
+    -fx-text-fill: #9B4DFF; /* Cor ao passar o mouse (roxo mais vibrante) */
+    -fx-font-size: 18px; /* Aumenta o tamanho do texto no hover */
+}
+
+/* Efeito pressionado no link Criar Conta */
+.create-account-button:pressed {
+    -fx-text-fill: #6A2DFF; /* Cor ao pressionar (roxo mais forte) */
+}
+
+
+/* Segundo background */
+.highlighted-background {
+    -fx-background-color: linear-gradient(to bottom right, #2a1d29, #3b2e46);
+    -fx-background-radius: 20;
+    -fx-min-width: 300px;
+    -fx-min-height: 400px;
+    -fx-max-width: 500px;
+    -fx-max-height: 600px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);
+    -fx-padding: 20px;
+    -fx-border-color: #4e1b8d;
+    -fx-border-radius: 20;
+    -fx-background-insets: 0, 0;
+}
+
+
+
+/* Ajuste para garantir que o textfield de password tenha o mesmo tamanho do email */
+.text-field.password {
+    -fx-max-width: 280px;
+    -fx-min-width: 200px;
+    -fx-pref-width: 280px;
+}
+/*FIM LOGIN e CADASTRO*/
+
+
+/*HOME*/
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #333333; /* Cor de fundo mais escura para a sidebar */
+    -fx-padding: 20px 30px; /* Padding interno mais equilibrado */
+    -fx-spacing: 10px; /* Adiciona espaçamento entre os elementos */
+    -fx-alignment: top-center; /* Alinha os itens ao topo e centralizados horizontalmente */
+}
+
+/* Título da sidebar */
+.sidebar-title {
+    -fx-text-fill: white; /* Título branco */
+    -fx-font-size: 24px; /* Tamanho do título */
+    -fx-font-weight: bold; /* Negrito */
+    -fx-padding: 5px 0;
+}
+
+/* Lista de Histórico (History List) */
+.history-list {
+    -fx-background-color: #3c3c3c; /* Fundo da lista */
+    -fx-padding: 20px 400px; /* Altere o valor horizontal do padding para 20px */
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra sutil */
+    -fx-overflow: auto; /* Permite rolagem se a lista for longa */
+}
+
+/* Botão de música da sidebar */
+.sidebar-music-button {
+    -fx-background-color: transparent; /* Fundo transparente */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-padding: 5px 60px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2); /* Efeito de sombra suave */
+}
+
+
+
+/* Botão da sidebar */
+.sidebar-button {
+    -fx-background-color: #00e5ff; /* Cor vibrante de fundo */
+    -fx-font-weight: bold;  /* Deixa o texto em negrito */
+    -fx-font-size: 20px;  /* Define o tamanho da fonte */
+    -fx-font-family: "Open Sans", sans-serif;  /* Define a fonte como Open Sans */
+    -fx-text-fill: black; /* Cor do texto contrastante */
+    -fx-padding: 8px 20px; /* Padding interno ajustado */
+    -fx-background-radius: 25px; /* Bordas arredondadas */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2); /* Sombra suave */
+}
+
+
+
+.sidebar-artist-button {
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+    -fx-alignment: center;
+}
+
+.sidebar-music-label {
+    -fx-text-fill: white; /* Cor do texto em branco */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-font-weight: bold; /* Fonte em negrito */
+}
+
+
+
+
+/* Lista de histórico */
+.sidebar .history-list {
+    -fx-background-color: #221f1f; /* Cor de fundo escura */
+    -fx-padding: 5px 20px; /* Padding mais balanceado */
+    -fx-background-radius: 5px; /* Bordas arredondadas */
+}
+
+
+/* Botão de rodapé da sidebar */
+.sidebar-footer-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: gray;
+    -fx-font-size: 18px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+/* Barra superior */
+.top-bar {
+    -fx-background-color: #262626; /* Cor de fundo mais neutra */
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra suave para a barra */
+}
+
+/* Campo de pesquisa */
+.search-field {
+    -fx-background-color: #3c3c3c; /* Cor de fundo suave */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-background-radius: 20px; /* Bordas arredondadas */
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-border-color: #5c5c5c; /* Cor de borda suave */
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Efeito de sombra suave */
+    -fx-focus-color: #6a6a6a;
+    -fx-faint-focus-color: transparent;
+    -fx-min-width: 500px;
+}
+
+.search-button {
+    -fx-background-color: #00e5ff;  /* Cor de fundo ciano */
+    -fx-background-radius: 50%;  /* Torna o botão redondo */
+    -fx-padding: 5px;  /* Ajusta o tamanho do botão (pode ser ajustado conforme necessário) */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra suave */
+    -fx-alignment: center;  /* Centraliza o ícone dentro do botão */
+    -fx-min-width: 40px;  /* Garantir que o botão tenha largura mínima para o ícone */
+    -fx-min-height: 40px;  /* Garantir que o botão tenha altura mínima para o ícone */
+}
+
+.search-button .graphic {
+    -fx-fit-width: 40px;  /* Define o tamanho do ícone */
+    -fx-fit-height: 40px;
+}
+
+
+
+.top_bar_text {
+    -fx-font-size: 20px;  /* Ajuste o tamanho da fonte conforme necessário */
+    -fx-text-fill: white;  /* Cor do texto */
+    -fx-font-weight: bold;  /* Texto em negrito */
+    -fx-font-family: "Open Sans", sans-serif;  /* Fonte Open Sans */
+    -fx-background-color: transparent;  /* Fundo transparente */
+    -fx-padding: 10px 15px;  /* Padding para o texto */
+}
+
+
+
+/* Botão do usuário */
+.user-button {
+    -fx-background-color: #00e5ff;  /* Cor de fundo ciano */
+    -fx-background-radius: 50%;  /* Torna o botão redondo */
+    -fx-padding: 0px 0px;  /* Ajusta o tamanho do botão (pode ser ajustado conforme necessário) */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra suave */
+    -fx-alignment: center;  /* Centraliza o ícone dentro do botão */
+}
+
+.user-button .graphic {
+    -fx-fit-width: 50px;  /* Define o tamanho do ícone */
+    -fx-fit-height: 50px;
+}
+
+
+.user-name {
+    -fx-background-color: transparent;  /* Deixa o fundo transparente */
+    -fx-font-size: 20px;
+    -fx-padding: 10px;  /* Mantém o padding */
+    -fx-effect: none;  /* Remove a sombra */
+    -fx-text-fill: white;  /* Define a cor do texto como branco */
+    -fx-font-weight: bold;  /* Deixa o texto em negrito */
+    -fx-font-family: "Open Sans", sans-serif;  /* Define a fonte como Open Sans */
+}
+
+.top-bar-profile {
+    -fx-padding: 0 0 0 600px;  /* Adiciona 20px de espaço à esquerda */
+}
+
+
+
+/* Área de conteúdo */
+.content-area {
+    -fx-background-color: #1c1c1c; /* Cor de fundo escura */
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+/* Título do conteúdo */
+.content-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-padding: 10px 0;
+    -fx-font-weight: bold; /* Negrito para destaque */
+}
+
+/* Linha de artistas */
+.artist-row {
+    -fx-spacing: 15px;
+}
+
+/* Botão do artista */
+.artist-button {
+    -fx-background-color: #00e5ff;
+    -fx-background-radius: 50%;
+    -fx-padding: 10px;
+    -fx-min-width: 250px;
+    -fx-min-height: 250px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2); /* Efeito de sombra */
+}
+
+/* Player de música */
+.music-player {
+    -fx-background-color: #333333;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+    -fx-display: flex;
+    -fx-justify-content: center;
+    -fx-align-items: center;
+}
+
+/* Botão do player */
+.player-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+}
+
+/* Efeito de hover no botão do player */
+.player-button:hover {
+    -fx-background-color: #00b3cc; /* Cor de fundo mais escura no hover */
+    -fx-cursor: hand; /* Cursor de mão ao passar o mouse */
+}
+/* FIM HOME */
