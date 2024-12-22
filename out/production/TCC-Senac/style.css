@@ -3,6 +3,191 @@
     -fx-background-color: linear-gradient(to bottom, #2a0e3d, #1a0e1d);
 }
 
+/* Estilo geral */
+/* Body */
+.root {
+    -fx-background-color: #1c1c1c; /* Cor de fundo mais escura */
+    -fx-font-family: Arial, sans-serif; /* Definir uma fonte limpa e moderna */
+    -fx-font-size: 14px; /* Tamanho padrão da fonte */
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #333333; /* Cor de fundo mais escura para a sidebar */
+    -fx-padding: 20px 10px; /* Padding interno mais equilibrado */
+    -fx-spacing: 10px; /* Adiciona espaçamento entre os elementos */
+}
+
+/* Lista de Histórico (History List) */
+.history-list {
+    -fx-background-color: #3c3c3c; /* Fundo da lista */
+    -fx-padding: 0px 20px; /* Altere o valor horizontal do padding para 20px */
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra sutil */
+    -fx-min-height: 200px; /* Altura mínima */
+    -fx-max-height: 400px; /* Altura máxima */
+    -fx-overflow: auto; /* Permite rolagem se a lista for longa */
+}
+
+
+/* Botão da sidebar */
+.sidebar-button {
+    -fx-background-color: #00e5ff; /* Cor vibrante de fundo */
+    -fx-text-fill: black; /* Cor do texto contrastante */
+    -fx-font-size: 14px; /* Tamanho da fonte */
+    -fx-padding: 10px 20px; /* Padding interno ajustado */
+    -fx-background-radius: 10px; /* Bordas arredondadas */
+    -fx-border-color: #00b3cc; /* Cor da borda semelhante ao fundo */
+    -fx-border-width: 2px; /* Largura da borda */
+    -fx-border-radius: 10px; /* Bordas arredondadas também na borda */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2); /* Sombra suave */
+}
+
+/* Título da sidebar */
+.sidebar-title {
+    -fx-text-fill: white; /* Título branco */
+    -fx-font-size: 16px; /* Tamanho do título */
+    -fx-font-weight: bold; /* Negrito */
+    -fx-padding: 5px 0;
+}
+
+/* Lista de histórico */
+.sidebar .history-list {
+    -fx-background-color: #221f1f; /* Cor de fundo escura */
+    -fx-padding: 5px 20px; /* Padding mais balanceado */
+    -fx-background-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Botão de música da sidebar */
+.sidebar-music-button {
+    -fx-background-color: transparent; /* Fundo transparente */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 16px; /* Tamanho da fonte */
+    -fx-padding: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2); /* Efeito de sombra suave */
+}
+
+/* Botão de rodapé da sidebar */
+.sidebar-footer-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: gray;
+    -fx-font-size: 18px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+/* Barra superior */
+.top-bar {
+    -fx-background-color: #262626; /* Cor de fundo mais neutra */
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra suave para a barra */
+}
+
+/* Campo de pesquisa */
+.search-field {
+    -fx-background-color: #3c3c3c; /* Cor de fundo suave */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-background-radius: 20px; /* Bordas arredondadas */
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-border-color: #5c5c5c; /* Cor de borda suave */
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Efeito de sombra suave */
+    -fx-focus-color: #6a6a6a;
+    -fx-faint-focus-color: transparent;
+    -fx-min-width: 500px;
+}
+
+/* Botão de pesquisa */
+.search-button {
+    -fx-background-color: #00e5ff;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra suave */
+}
+
+/* Texto da barra superior */
+.top-bar-text {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+/* Botão do usuário */
+.user-button {
+    -fx-background-color: #00e5ff;
+    -fx-background-radius: 50%;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra suave */
+}
+
+/* Área de conteúdo */
+.content-area {
+    -fx-background-color: #1c1c1c; /* Cor de fundo escura */
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+/* Título do conteúdo */
+.content-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-padding: 10px 0;
+    -fx-font-weight: bold; /* Negrito para destaque */
+}
+
+/* Linha de artistas */
+.artist-row {
+    -fx-spacing: 15px;
+}
+
+/* Botão do artista */
+.artist-button {
+    -fx-background-color: #00e5ff;
+    -fx-background-radius: 50%;
+    -fx-padding: 10px;
+    -fx-min-width: 250px;
+    -fx-min-height: 250px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2); /* Efeito de sombra */
+}
+
+/* Player de música */
+.music-player {
+    -fx-background-color: #333333;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+    -fx-display: flex;
+    -fx-justify-content: center;
+    -fx-align-items: center;
+}
+
+/* Botão do player */
+.player-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+}
+
+/* Efeito de hover no botão do player */
+.player-button:hover {
+    -fx-background-color: #00b3cc; /* Cor de fundo mais escura no hover */
+    -fx-cursor: hand; /* Cursor de mão ao passar o mouse */
+}
+
+
+/* FIM HOME */
+
+
+
+
+
+
+
 /* Título do app */
 .app-title {
     -fx-font-size: 36px;
@@ -12,7 +197,7 @@
 }
 
 /* Campo de texto */
-.text-field {
+.text-field_login {
     -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
     -fx-font-size: 14px;
     -fx-padding: 10px; /* Garantir que o padding seja o mesmo */
